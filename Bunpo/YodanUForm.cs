@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -15,15 +16,13 @@ namespace Bunpo {
         public YodanUForm() {
             InitializeComponent();
 
-            StreamReader sr = File.OpenText("yodanUExamples.txt");
-            lines = File.ReadAllLines("yodanUExamples.txt").Length;
-            yodanExamples = new string[lines];
-            for (int i = 0; i < lines; i++) {
-                yodanExamples[i] = sr.ReadLine();
+            System.IO.Stream fileStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Bunpo.yodanUExamples.txt");
+            using (System.IO.StreamReader reader = new System.IO.StreamReader(fileStream))
+            {
+               string details = reader.ReadToEnd();
+               yodanExamples = details.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
+               lines = yodanExamples.Length;
             }
-            sr.Close();
-
-            lines = 0;
 
             LoadImages();
         }

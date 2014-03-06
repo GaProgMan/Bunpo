@@ -1,0 +1,7 @@
+﻿   Welcome to seppydude's Japanese Grammar program!
+   This program was made to help me study Japanese grammar over the 2007 summer
+   vacation from university. At the minute, it only has verbs, but a later version will
+   have all sorts of goodies and shiny objects (hopefully).
+   
+   If you have any problems or suggestions, please feel free to email me:
+            seppydude@gmail.com

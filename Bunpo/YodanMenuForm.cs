@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.IO;
+using System.Reflection;
 using System.Text;
 using System.Windows.Forms;
 
@@ -21,9 +22,11 @@ namespace Bunpo {
             Bitmap yodanBitmap = new Bitmap(yodanPic);
             yodanPictureBox.Image = yodanBitmap;
 
-            StreamReader sr = File.OpenText("Yodan.txt");
-            description = sr.ReadToEnd();
-            sr.Close();
+            System.IO.Stream fileStream = Assembly.GetExecutingAssembly().GetManifestResourceStream("Bunpo.Yodan.txt");
+            using (System.IO.StreamReader reader = new System.IO.StreamReader(fileStream))
+            {
+               description = reader.ReadToEnd();
+            }
 
             yodanDescriptionLabel.Text = description;
 

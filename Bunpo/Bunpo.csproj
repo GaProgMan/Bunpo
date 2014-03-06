@@ -95,7 +95,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="Bunpo_TemporaryKey.pfx" />
     <BaseApplicationManifest Include="Properties\app.manifest" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -194,6 +193,15 @@
     <Folder Include="Yodan-Ru\" />
     <Folder Include="Yodan-Su\" />
     <Folder Include="Yodan-Tsu\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="AboutMessage.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Ichidan.txt" />
+    <EmbeddedResource Include="IchidanExamples.txt" />
+    <EmbeddedResource Include="Yodan.txt" />
+    <EmbeddedResource Include="yodanUExamples.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
