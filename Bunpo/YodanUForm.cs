@@ -21,8 +21,9 @@ namespace Bunpo {
             {
                string details = reader.ReadToEnd();
                yodanExamples = details.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-               lines = yodanExamples.Length;
             }
+
+            lines = 0;
 
             LoadImages();
         }

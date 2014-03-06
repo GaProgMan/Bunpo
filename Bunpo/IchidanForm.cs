@@ -35,7 +35,7 @@ namespace Bunpo {
             {
                string details = reader.ReadToEnd();
                ichidanExamples = details.Split(new string[] { "\r\n" }, StringSplitOptions.RemoveEmptyEntries);
-               lines = ichidanExamples.Length;
+               lines = (ichidanExamples.Length) - 1;
             }
 
             loadImage();
